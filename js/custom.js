@@ -85,6 +85,13 @@
          * lazyLoadInstance.update();
          * @see https://github.com/verlok/vanilla-lazyload
          */
+        const logo = document.querySelector("#logo");
+        const themeSwitcherBtn = document.querySelector("#theme-switcher");
+        themeSwitcherBtn.addEventListener("click", function (e) {
+          logo.querySelector("img").src = `assets/logo_${
+            e.currentTarget.classList.contains("dark") ? "dark" : "light"
+          }.png`;
+        });
       },
     });
   });
