@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no" />
+    <title>Pmotion - Animated GIF and Video Maker Documentation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel='stylesheet' href='css/fontawesome.css' type='text/css' media='all' />
+    <link rel='stylesheet' href='css/bootstrap.min.css' type='text/css' media='all' />
+    <link rel='stylesheet' href='css/style.css' type='text/css' media='all' />
+    <link rel='stylesheet' href='css/highlight.css' type='text/css' media='all' />
+</head>
+
+<body>
+    <header id="tessera-header">
+        <div id="tessera-header-wrapper">
+            <div id="tessera-page-title" class="container">
+                <h1>Help Documentation</h1>
+                <p>Pmotion - Animated GIF and Video Maker</p>
+            </div>
+        </div>
+    </header>
+    <main id="tessera-main-wrapper">
+        <div class="container">
+            <div class="row">
+                <aside id="aside" class="col-12 col-xl-3">
+                    <div class="theiaStickySidebar">
+                        <ul id="tessera-list" class="list-group">
+                            <li class="list-group-item"><a href="#installation">Installation</a></li>
+                            <li class="list-group-item"><a href="#basics">Basics</a></li>
+                            <li class="list-group-item"><a href="#templates">Templates</a></li>
+                            <li class="list-group-item"><a href="#uploads">Uploads</a></li>
+                            <li class="list-group-item"><a href="#text">Text</a></li>
+                            <li class="list-group-item"><a href="#objects">Objects</a></li>
+                            <li class="list-group-item"><a href="#images">Images</a></li>
+                            <li class="list-group-item"><a href="#videos">Videos</a></li>
+                            <li class="list-group-item"><a href="#audio">Audio</a></li>
+                            <li class="list-group-item"><a href="#qrcode">QR Code</a></li>
+                            <li class="list-group-item"><a href="#download">Save/Download</a></li>
+                        </ul>
+                        <div class="clearfix"></div>
+                    </div>
+                </aside>
+
+                <div class="col-12 col-xl-9 mt-5 mt-xl-0">
+                    
+                    <section class="section" id="installation">
+                        <div class="page-header">
+                            <h2>Installation</h2>
+                        </div>
+                        <div class="alert alert-warning">
+                            <p>Please note that, if you open <strong>index.html</strong> file directly on your browser, it may not work properly. Most browsers restricts the kinds of files that pages can load (and methods of loading) when you open them from a file:// URL. You should upload the folder to your hosting or create local server environment on your computer using a third party app. For example; <a style="color:inherit;" href="https://www.mamp.info/en/mamp/mac/">MAMP</a>.</p>
+                        </div>
+                        <h3>Folders</h3>
+                        <p><strong>Assets:</strong> This folder contains images used in design.</p>
+                        <p><strong>CSS:</strong> This folder contains all CSS files.</p>
+                        <p><strong>Files:</strong> This folder contains all objects and templates hierarchically.</p>
+                        <p><strong>JS:</strong> This folder contains all javascript files. All javascript plugins (except FabricJS and JQuery) we've used are in <code>js/plugins.min.js</code> file. You can find the source files in <code>libs</code> folder.</p>
+                        <p><strong>Json:</strong> This folder contains a json file which is required for loading "Google Fonts".</p>
+                        <hr>
+                        <h4>Settings</h4>
+                        <p>
+                            You can adjust settings from <code>js/custom.js</code> file. You can add your custom javascript functions into <code>customFunctions</code> function.
+                        </p>
+<pre><code class="language-javascript">baseURL: "./", // The url of the main directory. For example; "http://www.mysite.com/pmotion/"
+PexelsApiKey: '563492ad6f917000010000015fdb98d08f024608bacd72497e5f09e3', // Your Pexels API key. @see https://www.pexels.com/api/documentation/
+PexelsPagination: 20, // Max. number of images to show.
+PexelsLanguage: 'en-US', // The locale of the search you are performing. The current supported locales are: 'en-US' 'pt-BR' 'es-ES' 'ca-ES' 'de-DE' 'it-IT' 'fr-FR' 'sv-SE' 'id-ID' 'pl-PL' 'ja-JP' 'zh-TW' 'zh-CN' 'ko-KR' 'th-TH' 'nl-NL' 'hu-HU' 'vi-VN' 'cs-CZ' 'da-DK' 'fi-FI' 'uk-UA' 'el-GR' 'ro-RO' 'nb-NO' 'sk-SK' 'tr-TR' 'ru-RU'
+PexelsImgSize: 'large2x', // Valid image sizes are; original large2x large medium small portrait landscape
+PixabayApiKey: '720935-7e417c770b54e3787204ad9d1', // Your Pixabay API key. @see https://pixabay.com/api/docs/
+PixabayPagination: 20, // Max. number of images to show.
+PixabayLanguage: 'en', // The locale of the search you are performing. Accepted values: cs, da, de, en, es, fr, id, it, hu, nl, no, pl, pt, ro, sk, fi, sv, tr, vi, th, bg, ru, el, ja, ko, zh
+PixabaySafeSearch: 'false', // A flag indicating that only images suitable for all ages should be returned. Accepted values: "true", "false".
+PixabayEditorsChice: 'false', // Select images that have received an Editor's Choice award. Accepted values: "true", "false".
+apiCaching: true, // Browser caching for API requests. Boolean value: true or false
+maxUploadLimit: 10, // Maximum allowed file upload size (MB)
+canvasWidth: 1080, // Default canvas width (px)
+canvasHeight: 1080, // Default canvas height (px)
+fontFamily: "Roboto", // Change only if you've changed the default font family from CSS
+borderColor: '#000000',  // Color of controlling borders of an object (when it's active).
+borderScaleFactor: 2, // Scale factor of object's controlling borders bigger number will make a thicker border border is 1, so this is basically a border thickness since there is no way to change the border itself.
+borderOpacityWhenMoving: 0.5, // Opacity of object's controlling borders when object is active and moving.
+cornerColor: '#FFFFFF', // Color of controlling corners of an object (when it's active).
+cornerSize: 12, // Size of object's controlling corners (in pixels).
+cornerStyle: 'circle', // Specify style of control, 'rect' or 'circle'.
+cornerStrokeColor: '#000000', // Color of controlling corners of an object (when it's active and transparentCorners false).
+borderDashArray: [4, 4], // Array specifying dash pattern of an object's borders (hasBorder must be true).
+editingBorderColor: 'rgba(0,0,0,0.5)', // Editing object border color.
+backgroundColor: '#888888', // Default canvas background color
+imageLayerColor: '#1B9AAA', // Image layer color on the timeline
+videoLayerColor: '#DAA89B', // Video layer color on the timeline
+textLayerColor: '#84A9C0', // Text layer color on the timeline
+shapeLayerColor: '#87D68D', // Shape layer color on the timeline
+animatedTextLayerColor: '#87D68D', // Animated text layer color on the timeline
+audioLayerColor: '#E2EB98', // Audio layer color on the timeline
+watermark: false, // true or false
+watermarkText: 'Made with Pmotion', // The watermark text
+watermarkFontFamily: 'Roboto', // The font must be loaded on the first page load or must be a web safe font
+watermarkFontStyle: 'normal', // Possible values: "", "normal", "italic" or "oblique".
+watermarkFontColor: '#000', // Watermark font color
+watermarkFontSize: 40, // Watermark font size (int)
+watermarkFontWeight: 'bold', // e.g. bold, normal, 400, 700
+watermarkBackgroundColor: '#FFF', // Watermark background color
+watermarkLocation: 'bottom-right', // Possible values: "bottom-right", 
+presets: [
+    ['1:1', 1080, 1080],
+    ['1:1', 720, 720],
+    ['1:1', 600, 600],
+    ['4:5', 1080, 1350],
+    ['16:9', 1280, 720],
+    ['16:9', 640, 360],
+    ['9:16', 720, 1280],
+    ['9:16', 360, 640],
+    ['4:3', 640, 480],
+    ['4:3', 480, 360]
+],  // Canvas preset; [Ratio (string), Width (int), Height (int)]
+colorpickerSwatches: [
+    'rgba(244, 67, 54, 1)',
+    'rgba(233, 30, 99, 1)',
+    'rgba(156, 39, 176, 1)',
+    'rgba(103, 58, 183, 1)',
+    'rgba(63, 81, 181, 1)',
+    'rgba(33, 150, 243, 1)',
+    'rgba(3, 169, 244, 1)',
+    'rgba(0, 188, 212, 1)',
+    'rgba(0, 150, 136, 1)',
+    'rgba(76, 175, 80, 1)',
+    'rgba(139, 195, 74, 1)',
+    'rgba(205, 220, 57, 1)',
+    'rgba(255, 235, 59, 1)',
+    'rgba(255, 193, 7, 1)'
+], // Colorpicker swatches (rgb, rgba or hex)</code></pre>
+
+<h4>API Settings</h4>
+                        <p><p>With <a href="https://www.pexels.com/" target="_blank"><strong>Pexels</strong></a> and <a href="https://www.pixabay.com/" target="_blank"><strong>Pixabay</strong></a> integrations, you can browse millions of high-quality royalty free stock images and videos from Pmotion. </p>
+                         <p><strong>Pixabay:</strong> You must get an API key from your Pixabay account. Creating account and getting API key is free. After signing-in <a href="https://pixabay.com/api/docs/" target="_blank">you can find your API key on this page.</a></p>
+                         <p><a class="btn btn-primary" href="https://pixabay.com/api/docs/" target="_blank">Pixabay API Documentation</a></p>
+                         <div class="img-wrapper" style="max-width:800px">
+                             <img loading="lazy" src="images/pixabay-key.png" alt="" />
+                        </div>
+                        <p>As default image size is a maximum width/height of 1280px. To get the full HD image (maximum width/height of 1920px) url instead, your account should be approved for full API access. You can request full API access from the API page.</p>
+                        <div class="img-wrapper" style="max-width:800px">
+                             <img loading="lazy" src="images/pixabay-full-api.png" alt="" />
+                        </div>
+                        <p><strong>Pexels:</strong> You must get an API key from your Pexels account. Creating account and getting API key is free. <a href="https://www.pexels.com/api/new/" target="_blank">Click here to get your API key.</a></p>
+                        <p><a class="btn btn-primary" href="https://www.pexels.com/api/documentation/" target="_blank">Pexels API Documentation</a></p>
+                    </section>
+
+                    <section class="section" id="basics">
+                        <div class="page-header">
+                            <h2>Basics</h2>
+                        </div>
+                        <div class="tessera-iframe-wrapper">
+                            <div class="tessera-iframe-video">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/db8QpysBhkQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                        <p>You can see all the properties in the settings panel on the left. By default with nothing selected you can access the canvas settings to set the dimensions, background color, and duration. When you select a layer, you will see layer specific settings in this panel.</p>
+                        <p>In the middle of the screen there’s the canvas area, where you can preview your video and interact with the layers directly. To navigate around it, you can use the pan tool by clicking on the hand icon on the bottom right. You can zoom in and out with the mouse wheel or pinching on the touchpad, or by using the zoom in-out buttons.</p>
+                        <p>To make selections, just drag a box around your objects, or click on them directly. You can use the handles to resize or rotate your selections. If you’d like to go back, you can use the undo/redo buttons on the top left.</p>
+                        <p>After you’ve added an asset into the project, you can start animating it. By default all layers are static, so you can move them around and transform them without creating any keyframes. Once you’re ready, you can just click on the clock icon on the respective layer.</p>
+                        <p>The initial keyframes will all be set, and then you can move the layer around at different time points to automatically generate keyframes. Working with keyframes is easy. Just drag the seekbar (or click somewhere in the timeline to jump) to a point in time, transform your selection in the canvas (e.g. by scaling, moving, rotating…), and the keyframes will be automatically generated. You can reposition the keyframes, delete them, or set the easing by clicking on them.</p>
+                        <p>The timeline area is on the bottom of your screen. You can resize it by grabbing the edge up and down, if you need more space to work with. You can also drag the layers up and down to change their ordering in the canvas.</p>
+                        <p>Below the timeline there’s the playback controls. On the left side you can use the zoom level to zoom in or out of the timeline, and the speed dropdown to change the playback speed. You can use the controls in the center to play, pause, and skip.</p>
+                        <p></p>
+                    </section>
+
+                    <section class="section" id="templates">
+                        <div class="page-header">
+                            <h2>Templates</h2>
+                        </div>
+                        <div class="tessera-iframe-wrapper">
+                            <div class="tessera-iframe-video">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/3unLfQN5YH4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                        <h4>How To Add Your Own Templates To The Library?</h4>
+                        <p>To add your own templates to "Template Library" area;</p>
+                        <p>1) Create a design with Pmotion.</p>
+                        <p>2) Go to Templates -> My Templates.</p>
+                        <p>3) Click "Export" button to download JSON file.</p>
+                        <p>4) Create a square thumbnail image for your template.</p>
+                        <p>5) Put JSON file and the thumbnail into Files->Templates folder.</p>
+                        <p>6) Add your template to the <code>index.html</code> file like the following;</p>
+<pre><code class="language-html">&lt;div id&#x3D;&quot;template-library&quot; class&#x3D;&quot;css-grid&quot;&gt;
+...
+&lt;div class&#x3D;&quot;image-grid-item&quot; data-template&#x3D;&quot;files&#x2F;templates&#x2F;TEMPLATE_FILE.json&quot; title&#x3D;&quot;Template Title&quot;&gt;
+&lt;div class&#x3D;&quot;img-wrap&quot;&gt;&lt;div class&#x3D;&quot;img-loader&quot;&gt;&lt;&#x2F;div&gt;
+&lt;img class&#x3D;&quot;lazy&quot; src&#x3D;&quot;files&#x2F;templates&#x2F;THUMBNAIL_FILE.png&quot; alt&#x3D;&quot;&quot; draggable&#x3D;&quot;false&quot; &#x2F;&gt;
+&lt;&#x2F;div&gt;
+...
+&lt;&#x2F;div&gt;</code></pre>
+                    </section>
+
+                    <section class="section" id="uploads">
+                        <div class="page-header">
+                            <h2>Uploads</h2>
+                        </div>
+                        <p>Users can upload their own images (png,jpeg,webp,svg) and videos (mp4) to Pmotion from "UPLOADS" tab. These files are stored in the users' browser. Not on your server.</p>
+                        <p>The stored files at "Templates->My Templates" and "Audio->Upload Audio" are stored in the user's browser as well.</p>
+                        <p>To add an asset, you can either click on it (to add it in the center of the screen), or drag it in the canvas directly.</p>
+                        <div class="img-wrapper" style="max-width:400px">
+                            <img loading="lazy" src="images/uploads.png" alt="" />
+                       </div>
+                    </section>
+
+                    <section class="section" id="text">
+                        <div class="page-header">
+                            <h2>Text</h2>
+                        </div>
+                        <div class="tessera-iframe-wrapper">
+                            <div class="tessera-iframe-video">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/C1m0HI52msc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="section" id="objects">
+                        <div class="page-header">
+                            <h2>Objects</h2>
+                        </div>
+                        <div class="tessera-iframe-wrapper">
+                            <div class="tessera-iframe-video">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/0m1ntiWTktE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                        <h4>How To Add Your Own Objects To The Library?</h4>
+                        <p>1) Create a folder for your SVG files in "Files" folder (For example; "my-objects").</p>
+                        <p>2) Add your SVG files to the <code>index.html</code> file like the following;</p>
+<pre><code class="language-html">&lt;!-- My Objects --&gt;
+&lt;p class&#x3D;&quot;row-title&quot;&gt;My Objects&lt;&#x2F;p&gt;
+&lt;div class&#x3D;&quot;gallery-row&quot;&gt;
+&lt;div class&#x3D;&quot;grid-item&quot;&gt;
+&lt;img class&#x3D;&quot;object-svg&quot; draggable&#x3D;&quot;false&quot; src&#x3D;&quot;files&#x2F;my-objects&#x2F;1.svg&quot; data-file&#x3D;&quot;files&#x2F;my-objects&#x2F;1.svg&quot; &#x2F;&gt;
+&lt;&#x2F;div&gt;
+&lt;!-- ADD 11 ITEM MORE HERE --&gt;
+&lt;&#x2F;div&gt;
+&lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-full object-more&quot; data-folder&#x3D;&quot;files&#x2F;my-objects&#x2F;&quot; data-offset&#x3D;&quot;12&quot; data-count&#x3D;&quot;48&quot;&gt;Load More&lt;&#x2F;button&gt;
+
+&lt;!-- Shapes --&gt;
+&lt;p class&#x3D;&quot;row-title&quot;&gt;Shapes&lt;&#x2F;p&gt;
+...</code></pre>
+<p><strong>"data-count" must equal the total number of SVG files in the folder.</strong></p>
+<p><strong>SVG file names must be numerically sequential, starting with one. 1.svg, 2.svg, 3.svg etc.</strong></p>
+                    </section>
+                    <section class="section" id="images">
+                        <div class="page-header">
+                            <h2>Images</h2>
+                        </div>
+                        <div class="tessera-iframe-wrapper">
+                            <div class="tessera-iframe-video">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/eOq-fL6h5_4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="section" id="videos">
+                        <div class="page-header">
+                            <h2>Videos</h2>
+                        </div>
+                        <div class="tessera-iframe-wrapper">
+                            <div class="tessera-iframe-video">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/xcMEQi953nw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="section" id="audio">
+                        <div class="page-header">
+                            <h2>Audio</h2>
+                        </div>
+                        <p>Users can upload their own audio files by clicking "UPLOAD AUDIO" button.</p>
+                        <div class="img-wrapper" style="max-width:400px">
+                            <img loading="lazy" src="images/audio.png" alt="" />
+                       </div>
+                        <h4>How To Add Your Own Audio Files To The Library?</h4>
+                        <p>1) Put your audio file into Files->Audio folder.</p>
+                        <p>2) Create a square thumbnail image for your audio and put it into Files->Audio folder.</p>
+                        <p>3) Add your audio file to the <code>index.html</code> file like the following;</p>
+<pre><code class="language-html">&lt;div id&#x3D;&quot;audio-list&quot;&gt;
+&lt;div class&#x3D;&quot;audio-item&quot; data-file&#x3D;&quot;files&#x2F;audio&#x2F;MY_AUDIO_FILE.mp3&quot;&gt;
+&lt;div class&#x3D;&quot;audio-preview&quot;&gt;&lt;span class&#x3D;&quot;material-icons&quot;&gt;play_arrow&lt;&#x2F;span&gt;&lt;&#x2F;div&gt;
+&lt;img class&#x3D;&quot;audio-thumb&quot; src&#x3D;&quot;files&#x2F;audio&#x2F;MY_AUDIO_FILE.png&quot;&gt;
+&lt;div class&#x3D;&quot;audio-info&quot;&gt;
+&lt;div class&#x3D;&quot;audio-info-title&quot;&gt;TITLE_HERE&lt;&#x2F;div&gt;
+&lt;div class&#x3D;&quot;audio-info-duration&quot;&gt;DURATION_HERE&lt;&#x2F;div&gt;
+&lt;&#x2F;div&gt;
+&lt;&#x2F;div&gt;
+...
+&lt;&#x2F;div&gt;
+</code></pre> 
+                    </section>
+                    <section class="section" id="qrcode">
+                        <div class="page-header">
+                            <h2>QR Code</h2>
+                        </div>
+                        <div class="img-wrapper" style="max-width:400px">
+                            <img loading="lazy" src="images/qrcode.png" alt="" />
+                       </div>
+                        <p>QR codes can store, Website URLs, Contact information, Text messages, Product information, Wi-Fi network credentials, Payment information, Digital tickets and much more!</p>
+                    </section>
+                    <section class="section" id="download">
+                        <div class="page-header">
+                            <h2>Save/Download</h2>
+                        </div>
+                        <div class="img-wrapper" style="max-width:400px">
+                            <img loading="lazy" src="images/download.webp" alt="" />
+                       </div>
+                        <p>When you’re happy with what you’ve created, you can click on the Download button on the bottom right to open the download panel. You can export in WebM video, animated GIF or as a static image for your current frame.</p>
+                        <p>Pmotion is fully local, so no data is stored in the cloud. Because of this, if you’d like to share your project with someone else, or bring it over a different machine, you’ll have to save the file locally from "Templates -> My Templates". You can use the export button to do so, which will generate a JSON file for you to import later.</p>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div class="clearfix"></div>
+    <footer id="tessera-footer">
+        <div id="tessera-footer-bottom">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-12 col-lg-6">
+                        <p>Copyright <a href="https://codecanyon.net/user/egemenerd/portfolio" target="_blank">egemenerd</a></p>
+                    </div>
+                    <div class="col-12 col-lg-6">
+
+                        <ul class="tessera-footer-icons">
+
+                            <li id="tessera-gototop-li" data-toggle="tooltip" data-placement="top" title="Go to Top"><a id="tessera-gototop" href="#"><i class="fa fa-arrow-up"></i></a></li>
+                        </ul>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </footer>
+    <script type='text/javascript' src='js/jquery.js'></script>
+    <script type='text/javascript' src='js/popper.min.js'></script>
+    <script type='text/javascript' src='js/bootstrap.min.js'></script>
+    <script type='text/javascript' src='js/theia-sticky-sidebar.min.js'></script>
+    <script type='text/javascript' src='js/highlight.min.js'></script>
+    <script>hljs.highlightAll();</script>
+    <script type='text/javascript' src='js/custom.js'></script>
+</body>
+
+</html>

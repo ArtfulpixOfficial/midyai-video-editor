@@ -1,0 +1,89 @@
+:root {
+    --color-1: #fff;
+    --color-2: #eee;
+    --color-3: #eee;
+    --color-4: #bcbcbc;
+    --color-5: #111;
+    --color-6: #494949;
+    --accent-color: #6658ea;
+    --accent-color-2: #5546e8;
+    --semi-transparent: rgba(255, 255, 255, 0.95);
+    --semi-transparent-2: rgba(0, 0, 0, 0.1);
+    --danger: #F44336;
+    --warning: #FFC107;
+    --success: #009688;
+}
+
+* {
+    scrollbar-color: #aaa #fff;
+}
+
+*::-webkit-scrollbar-track {
+    background: #eee;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #999;
+    border: 4px solid #eee;
+}
+
+.btn.active,
+.btn.active:hover,
+.btn.primary,
+.btn:hover,
+.btn.primary:hover,
+.layer-selected .layer-custom-name,
+.layer-selected .layer-name,
+.align-text-active,
+.format-text-active,
+.line-join-active,
+.delete-media,
+.btn.danger,
+.btn.danger:hover,
+#upload-link-add {
+    color: var(--color-3) !important;
+}
+
+.download-media {
+    background: var(--color-3) !important;
+}
+
+.rs-handle {
+    border: 7px solid var(--accent-color) !important;
+}
+
+.rs-theme-default .rs-progress,
+.rs-theme-default.rs-design-2d .rs-progress::before,
+#shapes-gallery-row .grid-item {
+    background-color: var(--color-4) !important;
+}
+
+#canvas-presets>div>span,
+a.stock-url {
+    background: var(--color-3) !important;
+}
+
+.rs-bar,
+.pcr-app .pcr-interaction .pcr-result {
+    background-color: var(--color-2) !important;
+}
+
+.pcr-app {
+    background-color: var(--color-1) !important;
+}
+
+.layer,
+.layer .properties,
+.row-el {
+    background: var(--color-3);
+}
+
+.layer-selected .layer-custom-name,
+.layer-selected .material-icons {
+    color: var(--color-3) !important;
+}
+
+.colorpicker-box {
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2' height='2'%3E%3Cpath d='M1,0H0V1H2V2H1' fill='%23FFFFFF'/%3E%3C/svg%3E") left top/contain #ccc;
+    background-size: 10px 10px;
+}

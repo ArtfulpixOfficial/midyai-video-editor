@@ -1,0 +1,35 @@
+:root {
+  --color-1: #121212;
+  --color-2: #212121;
+  --color-3: #050404;
+  --color-4: #303030;
+  --color-5: #fff;
+  --color-6: #aaa;
+  --accent-color: #6658ea;
+  --accent-color-2: #5546e8;
+  --semi-transparent: rgba(18, 18, 18, 0.95);
+  --semi-transparent-2: rgba(255, 255, 255, 0.1);
+  --danger: #F44336;
+  --warning: #FFC107;
+  --success: #009688;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #717171 #303030;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  background-color: #999;
+  border: 4px solid #303030;
+}
+
+*::-webkit-scrollbar-track {
+  background: #303030;
+}
+
+.colorpicker-box {
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2' height='2'%3E%3Cpath d='M1,0H0V1H2V2H1' fill='%23000000'/%3E%3C/svg%3E") left top/contain #333;
+  background-size: 10px 10px;
+}
